@@ -27,7 +27,7 @@ logstash_config name do
   notifies :restart, "logstash_service[#{name}]"
 end
 
-logstash_plugins 'contrib' do
+logstash_plugins 'logstash-output-influxdb' do
   instance name
   name 'logstash-output-influxdb'
   action [:create]
