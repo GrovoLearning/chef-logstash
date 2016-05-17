@@ -11,7 +11,7 @@ require 'chef/mixin/language'
 include Chef::Mixin::ShellOut
 
 def load_current_resource
-  @name = new_resource.name || 'contrib'
+  @name = new_resource.name || 'logstash-output-influxdb'
   @instance = new_resource.instance || 'default'
 
   @base_directory = new_resource.base_directory || Logstash.get_attribute_or_default(node, @instance, 'basedir')
